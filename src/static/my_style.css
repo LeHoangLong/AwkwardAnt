@@ -1,0 +1,38 @@
+.center_block_container{
+    text-align: center;
+}
+
+.center_block{
+    text-align: center;
+    display: inline-block;
+    width: 30%;
+    height: 3em;
+}
+
+.overflow{
+    overflow: auto;
+}
+
+.center_vertical{
+    padding-top: 0.75em;
+}
+
+.main_bg_color{
+    background-color: #ffb0f8;
+}
+
+.main_button_height{
+    height: 3em;
+}
+
+.main_bar_margin{
+    margin-top: 20%;
+}
+
+.list_border_width{
+    border-width: 10px;
+}
+
+.location_list_width{
+    width: 20em;
+}
