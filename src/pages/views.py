@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def home_view(request, *args, **kwargs):
-    return render(request, 'home.html', {})
+    model = {
+        'location_list': ['A', 'B', 'C', 'D']
+    }
+    return render(request, 'home.html', model)

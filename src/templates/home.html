@@ -23,10 +23,11 @@
         <div class="center_block_container">
             <div class="center_block">
                 <ul class='list-group'>
-                    <li class='list-group-item list_border_width'>A</li>
-                    <li class='list-group-item list_border_width'>B</li>
-                    <li class='list-group-item list_border_width'>C</li>
-                    <li class='list-group-item list_border_width'>D</li>
+                    {% for location in location_list%}
+                    <li class='list-group-item list_border_width'>
+                        <a href="location/{{ location }}">{{ location }}</a>
+                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
