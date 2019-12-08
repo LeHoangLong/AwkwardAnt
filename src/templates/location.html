@@ -16,16 +16,17 @@
         <div class="center_block_container">
             <div class="col-4 text-center center_block center_block_container main_bg_color rounded-pill">
                 <div class="center_vertical main_button_height">
-                    <div class="text-center">Select location</div>
+                    <div class="text-center">What do you want to do</div>
                 </div>
             </div>
         </div>
         <div class="center_block_container">
             <div class="center_block">
                 <ul class='list-group'>
-                    {% for location in location_list%}
+                    {% for goal in goal_list %}
                     <li class='list-group-item list_border_width'>
-                        <a href="location/{{ location }}/ok">{{ location }}</a>
+                        <!-- a href="location/{{ location }}/ok">{{ location }}</a-->
+                        {{ goal }}
                     </li>
                     {% endfor %}
                 </ul>
