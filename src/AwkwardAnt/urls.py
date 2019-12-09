@@ -21,5 +21,7 @@ from pages.views import home_view
 urlpatterns = [
     path('', home_view, name='home'),
     path('admin/', admin.site.urls),
-    path('location/', include('location.urls'))
+    path('location/', include('location.urls')),
+    path('goal/', include('goal.urls')),
+    path('suggestion/', include('suggestion.urls'))
 ]

@@ -23,10 +23,9 @@
         <div class="center_block_container">
             <div class="center_block">
                 <ul class='list-group'>
-                    {% for goal in goal_list %}
+                    {% for goal_item in goal_list %}
                     <li class='list-group-item list_border_width'>
-                        <!-- a href="location/{{ location }}/ok">{{ location }}</a-->
-                        {{ goal }}
+                        <a href="/goal/{{ goal_item }}">{{ goal_item }}</a>
                     </li>
                     {% endfor %}
                 </ul>

@@ -36,3 +36,19 @@
 .location_list_width{
     width: 20em;
 }
+
+.suggestion_title_margin{
+    margin: 1.5em;
+}
+
+.suggestion_action_font_color{
+    color: #9e1876;
+}
+
+.vote_legend_font_size{
+    font-size: 0.75em;
+}
+
+.suggestion_contributor_background{
+    background-color: #edc893;
+}
