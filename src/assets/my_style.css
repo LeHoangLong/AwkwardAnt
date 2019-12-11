@@ -52,3 +52,8 @@
 .suggestion_contributor_background{
     background-color: #edc893;
 }
+
+.upvote_image_size{
+    width: 1.5em;
+    height: 1.5em;
+}

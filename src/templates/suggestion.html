@@ -9,7 +9,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="{% static 'my_style.css' %}">
+        <link rel="stylesheet" href="{% static 'my_style.css' %}"/>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+        <script src="{% static 'my_script.js' %}"></script>   
     </head>
 
     <body>
@@ -19,10 +21,11 @@
                 <div class="suggestion_title_margin">
                     <div class='row'>
                         <div class='col-1'>
-                            <div>
+                            <img id="upvote_button" class="upvote_image_size" src="{% static 'upvote_button.png' %}"/>
+                            <div id="vote_count" class="center_block_container upvote_image_size">
                                 {{ description.score }}
                             </div>
-                            <div class="vote_legend_font_size">
+                            <div class="vote_legend_font_size center_block_container upvote_image_size">
                                 votes   
                             </div>
                         </div>
@@ -43,5 +46,10 @@
             </div>
             <div class="col-2"></div>
         </div>
+
+        <script>
+            addClickHandler(document.getElementById("upvote_button"), {{ upvoted }});
+        </script>
     </body>
 </html>
+
