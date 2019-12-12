@@ -13,7 +13,7 @@ class SuggestionDescription:
 def suggestion_view(request, suggestion_name, *args, **kwargs):
     suggestion_1 = SuggestionDescription('A', 'A detail', 'A contributor', 10)
     model = {
-        'upvoted': 'false',
+        'upvoted': 'no_vote',
         'description': suggestion_1
     }
     return render(request, 'suggestion.html', model)

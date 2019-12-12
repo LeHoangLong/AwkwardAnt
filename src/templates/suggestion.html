@@ -1,55 +1,42 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang='en'>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="{% static 'my_style.css' %}"/>
-        <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
-        <script src="{% static 'my_script.js' %}"></script>   
-    </head>
-
-    <body>
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
-                <div class="suggestion_title_margin">
-                    <div class='row'>
-                        <div class='col-1'>
-                            <img id="upvote_button" class="upvote_image_size" src="{% static 'upvote_button.png' %}"/>
-                            <div id="vote_count" class="center_block_container upvote_image_size">
-                                {{ description.score }}
-                            </div>
-                            <div class="vote_legend_font_size center_block_container upvote_image_size">
-                                votes   
-                            </div>
+{% block content %}
+    <div class="row container">
+        <div class="col-3"></div>
+        <div class="col-8">
+            <div class="suggestion_title_margin">
+                <div class='row'>
+                    <div class='col-1'>
+                        <img id="upvote_button" class="upvote_image_size" src="{% static 'upvote_button.png' %}"/>
+                        <div id="vote_count" class="center_block_container upvote_image_size">
+                            {{ description.score }}
                         </div>
-                        <div class='col-11'>
-                            <h3>{{ description.title }}</h3>
-                            <div>
-                                {{ description.detail }}
-                            </div>
-                            <div class='row'>
-                                <div class='col-10'></div>
-                                <div class='col-2 text-right suggestion_contributor_background'>
-                                    {{ description.contributor }}
-                                </div>
+                        <div class="vote_legend_font_size center_block_container upvote_image_size">
+                            votes   
+                        </div>
+                        <img id="downvote_button" class="upvote_image_size" src="{% static 'downvote_button.png' %}"/>
+                    </div>
+                    <div class='col-11'>
+                        <h3>{{ description.title }}</h3>
+                        <div>
+                            {{ description.detail }}
+                        </div>
+                        <div class='row'>
+                            <div class='col-8'></div>
+                            <div class='col-4 contributor_box text-right suggestion_contributor_background'>
+                                {{ description.contributor }}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-2"></div>
         </div>
+    </div>
 
-        <script>
-            addClickHandler(document.getElementById("upvote_button"), {{ upvoted }});
-        </script>
-    </body>
-</html>
+    <script>
+        addClickHandler(document.getElementById("upvote_button"), document.getElementById("downvote_button"), '{{ upvoted }}', {{ description.score }});
+    </script>
+
+{% endblock %}
 

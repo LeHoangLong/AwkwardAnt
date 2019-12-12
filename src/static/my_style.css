@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.container{
+    width: 100%;
+    min-height: 80%;
+}
+
 .center_block{
     text-align: center;
     display: inline-block;
@@ -18,7 +23,7 @@
 }
 
 .main_bg_color{
-    background-color: #ffb0f8;
+    background-color: #e37807;
 }
 
 .main_button_height{
@@ -42,7 +47,7 @@
 }
 
 .suggestion_action_font_color{
-    color: #9e1876;
+    color: #e37807;
 }
 
 .vote_legend_font_size{
@@ -50,10 +55,64 @@
 }
 
 .suggestion_contributor_background{
-    background-color: #edc893;
+    background-color: #f5a34c;
 }
 
 .upvote_image_size{
     width: 1.5em;
     height: 1.5em;
+}
+
+.footer_background{
+    background-color: #f5a34c;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    margin-top: 50%;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+.header_bar{
+    width: 100%;
+    background-color: #f5a34c;
+    height: 3em;
+    margin-top: 0px;
+    margin-bottom: 20px;;
+    padding: 0.5em;
+}
+
+.header_item_bar{
+    display: inline-block;
+    width: 5em;
+    height: 1.5em;
+    text-align: center;
+}
+
+.no_text_decoration{
+    text-decoration: none;
+    color: #000000;
+}
+
+a.no_text_decoration:hover{
+    color: #000000;
+    text-decoration: none;
+    background-color: #f7d39c;
+}
+
+.contributor_box{
+    min-height: 5em;
+    min-width: 5em;
+}
+
+.page_title{
+    margin-top: 0px;
+}
+
+.table_image_container{
+    width: 33%;
+    height: auto;
+    padding-bottom: 33%
 }

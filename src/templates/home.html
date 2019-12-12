@@ -1,35 +1,45 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="{% static 'my_style.css' %}">
-    </head>
+{% block content %}
+    <div class="row page_title">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <h1>Locations</h1>
+        </div>
+    </div>
 
-    <body>
-        <div class="center_block_container">
-            <div class="col-4 text-center center_block center_block_container main_bg_color rounded-pill">
-                <div class="center_vertical main_button_height">
-                    <div class="text-center">Select location</div>
-                </div>
+    <div class='row'>
+        <div class='col-1'></div>
+        <table id='img_table' class='col-10 table'>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        insertImageToTable(document.getElementById('img_table'), {{ location_list|safe }}, 3);
+    </script>
+
+    <!-- div class="row center_block_container container">
+        <div class="col-4"></div>
+        <div class="col-4 text-center center_block center_block_container main_bg_color rounded-pill">
+            <div class="center_vertical main_button_height">
+                <div class="text-center">Select location</div>
             </div>
+
         </div>
-        <div class="center_block_container">
-            <div class="center_block">
-                <ul class='list-group'>
-                    {% for location in location_list%}
-                    <li class='list-group-item list_border_width'>
-                        <a href="/location/{{ location }}/ok">{{ location }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
+
+
+        <ul class='list-group'>
+            {% for location in location_list%}
+            <div>
+            
             </div>
-        </div>
-    </body>
-</html>
+            <li class='list-group-item list_border_width'>
+                <a href="/location/{{ location }}/ok">{{ location }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div -->
+{% endblock %}
