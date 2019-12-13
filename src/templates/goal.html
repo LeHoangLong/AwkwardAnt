@@ -1,52 +1,27 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="{% static 'my_style.css' %}">
-    </head>
-    <body>
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
-                <div class="suggestion_title_margin">
-                    <h3>All suggestions</h3>
-                    <ul class="list-group">
-                        {% for goal_item in goal_list %}
-                        <li class='list-group-item'>
-                            <div class='row'>
-                                <div class='col-1'>
-                                    <div>
-                                        {{ goal_item.score }}
-                                    </div>
-                                    <div class="vote_legend_font_size">
-                                        votes   
-                                    </div>
-                                </div>
-                                <div class='col-11'>
-                                    <h5 class="suggestion_action_font_color">
-                                        <a href='/suggestion/{{ goal_item.title }}'>
-                                                {{ goal_item.title }}
-                                        </a>
-                                    </h5>
-                                    <div>
-                                        {{ goal_item.summary }}
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <div class="col-2"></div>
+{% block content %}
+    <div class="row page_title">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <h1>Help, I need to</h1>
         </div>
-    </body>
-</html>
+    </div>
+
+    <div class="row">
+        <div class='col-3'></div>
+        <div class='col-5'>
+            <ul class='list-group'>
+                {% for goal_item in goal_list %}
+                <a href="/location/{{ goal_item }}" class='no_text_decoration'>
+                    <li class='list-group-item list_hover'>
+                        {{ goal_item }}
+                    </li>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

@@ -19,7 +19,7 @@ from django.urls import path, include
 from pages.views import home_view
 
 urlpatterns = [
-    path('', home_view, name='home'),
+    path('', include('goal.urls')),
     path('admin/', admin.site.urls),
     path('location/', include('location.urls')),
     path('goal/', include('goal.urls')),

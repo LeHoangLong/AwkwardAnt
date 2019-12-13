@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('upvote', views.upvote_view),
-    path('<suggestion_name>', views.suggestion_view)
+    path('brief/<suggestion_group>', views.suggestion_list_view),
+    path('detail/<suggestion_name>', views.suggestion_view)
 ]

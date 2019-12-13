@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div class="suggestion_title_margin">
+                    <h3>All suggestions</h3>
+                    <ul class="list-group">
+                        {% for suggestion_brief in suggestion_brief_list %}
+                        <a href='/suggestion/detail/{{ suggestion_brief.title }}' class='no_text_decoration'>
+                            <li class='list-group-item list_hover'>
+                                <div class='row'>
+                                    <div class='col-1'>
+                                        <div>
+                                            {{ suggestion_brief.score }}
+                                        </div>
+                                        <div class="vote_legend_font_size">
+                                            votes   
+                                        </div>
+                                    </div>
+                                    <div class='col-11'>
+                                        <h5 class="suggestion_action_font_color">
+                                                    {{ suggestion_brief.title }}
+                                        </h5>
+                                        <div>
+                                            {{ suggestion_brief.summary }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </a>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+{% endblock %}

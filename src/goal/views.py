@@ -1,5 +1,6 @@
 from django.http import HttpRequest
 from django.shortcuts import render
+from . import models
 
 # Create your views here.
 
@@ -10,12 +11,12 @@ class GoalDescription:
         self.title = title
         self.summary = summary
     
-def goal_view(request, goal_name, *args, **kwargs):
-
-    description_1 = GoalDescription(10, 'A', 'A summary')
-    description_2 = GoalDescription(20, 'B', 'B summary')
-    
+def goal_view(request, *args, **kwargs):
+    all_goals = models.Goal.objects.all() 
+    goal_list = []
+    for goal in all_goals:
+        goal_list.append(goal.name)
     model = {
-        "goal_list": [description_1, description_2]
+        'goal_list': goal_list, 
     }
     return render(request, 'goal.html', model)

@@ -116,3 +116,7 @@ a.no_text_decoration:hover{
     height: auto;
     padding-bottom: 33%
 }
+
+li.list_hover:hover{
+    background-color: #f7d39c;
+}

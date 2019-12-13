@@ -60,7 +60,7 @@ function insertImageToTable(table, list, num_of_col){
         var data = document.createElement('td');
         data.setAttribute('class', 'center_block table_image_container');
         var div_elm = document.createElement('a')
-        div_elm.setAttribute('href', '/location/' + list[i]);
+        div_elm.setAttribute('href', '/suggestion/brief/' + list[i]);
         div_elm.setAttribute('class', 'center_block table_image_container');
         var text_elm = document.createTextNode(list[i])
         row_node.appendChild(data);
